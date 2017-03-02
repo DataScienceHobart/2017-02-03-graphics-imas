@@ -41,6 +41,8 @@ General resources
 
 ### interactive session
 
+http://pad.software-carpentry.org/DaSH-R
+
 * a short overview of graphics in R
 * pointers to the very large range of options
 * a short excursion on graphics tips and tricks (thanks Rowan!)
