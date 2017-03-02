@@ -10,7 +10,7 @@ To install all these, you should need only to
 install.packages(c("leaflet", "sp", "rgdal", "tidyverse", "maptools", "rworldmap", "mapview"))
 ```
 
-but if you have problems, feel free to email the organizer/s. 
+but if you have problems, don't worry it's not critical. (But feel free to email the organizer/s. )
 
 
 ### interactive session
