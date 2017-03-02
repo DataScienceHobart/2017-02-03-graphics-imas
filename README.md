@@ -12,6 +12,15 @@ install.packages(c("leaflet", "sp", "rgdal", "tidyverse", "maptools", "rworldmap
 
 but if you have problems, don't worry it's not critical. (But feel free to email the organizer/s. )
 
+## The Good Stuff
+
+mapview
+
+leaflet
+
+rgl with quadmesh and rangl
+
+
 ### Extra stuff
 
 General resources
