@@ -18,8 +18,7 @@ mapview
 
 leaflet
 
-rgl with quadmesh and rangl
-
+ggplot2
 
 ### Extra stuff
 
@@ -31,17 +30,12 @@ General resources
 
 [Create Maps with R Graphics](https://www.nceas.ucsb.edu/scicomp/usecases/CreateMapsWithRGraphics)
 
-Here I list packages we should also look at so we know what they have. 
+## Books
 
-* [oce](https://CRAN.R-project.org/package=oce)
-* [marmap](https://CRAN.R-project.org/package=marmap)
-* [oceanmap](https://CRAN.R-project.org/package=oceanmap)
-* [OceanView](https://CRAN.R-project.org/package=OceanView)
-* [orsifronts](https://CRAN.R-project.org/package=orsifronts)
-* [ocedata](https://CRAN.R-project.org/package=ocedata)
-* [RmarineHeatWaves](https://CRAN.R-project.org/package=RmarineHeatWaves)
-* [elevatr](https://CRAN.R-project.org/package=elevatr)
-* [mregions](https://CRAN.R-project.org/package=mregions)
+* GGPLOT2 http://ggplot2.org/book/
+* R GRAPHICS COOKBOOK: http://www.cookbook-r.com/Graphs/
+* Applied Analysis R Spatial: http://www.asdar-book.org/
+* Intro to R Spatial: https://books.google.com.au/books/about/An_Introduction_to_R_for_Spatial_Analysi.html?id=zsf-AwAAQBAJ&source=kp_cover&redir_esc=y&hl=en
 
 
 ## Questions
@@ -95,6 +89,21 @@ raster::stack(c("mydata1.nc", "mydata2.nc", "mydata3.nc"))
 Packages with data. 
 
 maptools, rworldmap, maps, orsifronts, 
+
+Here I list packages we should also look at so we know what they have. 
+
+* [oce](https://CRAN.R-project.org/package=oce)
+* [marmap](https://CRAN.R-project.org/package=marmap)
+* [oceanmap](https://CRAN.R-project.org/package=oceanmap)
+* [OceanView](https://CRAN.R-project.org/package=OceanView)
+* [orsifronts](https://CRAN.R-project.org/package=orsifronts)
+* [ocedata](https://CRAN.R-project.org/package=ocedata)
+* [RmarineHeatWaves](https://CRAN.R-project.org/package=RmarineHeatWaves)
+* [elevatr](https://CRAN.R-project.org/package=elevatr)
+* [mregions](https://CRAN.R-project.org/package=mregions)
+
+
+
 ### colours
 
 https://github.com/Bart6114/artyfarty
