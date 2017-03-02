@@ -1,16 +1,26 @@
-# 2017-02-03-graphics-imas
+# Graphics and maps in R
 
-## Session on graphics and maps in R
 
 [R set up](https://github.com/DataScienceHobart/2017-02-03-graphics-imas/blob/master/setup-R.md)
 
+
+## Getting Help
+
+* [Twitter #rstats](https://twitter.com/search?q=rstats)
+* [Stackoverflow #r topic](http://stackoverflow.com/questions/tagged/r)
+* [Stackoverflow #ggplot2 topic](http://stackoverflow.com/questions/tagged/ggplot2)
+* [Spatial StackExchange](http://gis.stackexchange.com/)
+* [R spatial mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-geo)
+* [R help mailing list](https://stat.ethz.ch/mailman/listinfo/r-help)
+
 ## The Good Stuff
 
-mapview
+* **ggplot2** http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/
 
-leaflet
+* **R leaflet**  https://rstudio.github.io/leaflet/
 
-ggplot2
+* **mapview** https://environmentalinformatics-marburg.github.io/mapview/introduction.html
+
 
 ### Extra stuff
 
@@ -29,6 +39,13 @@ General resources
 * Applied Analysis R Spatial: http://www.asdar-book.org/
 * Intro to R Spatial: https://books.google.com.au/books/about/An_Introduction_to_R_for_Spatial_Analysi.html?id=zsf-AwAAQBAJ&source=kp_cover&redir_esc=y&hl=en
 
+### interactive session
+
+* a short overview of graphics in R
+* pointers to the very large range of options
+* a short excursion on graphics tips and tricks (thanks Rowan!)
+* group session about problems, identify some examples to explore
+
 
 ## Questions
 
@@ -42,16 +59,10 @@ https://github.com/DataScienceHobart/2017-02-03-graphics-imas/issues/3
 
 https://github.com/DataScienceHobart/2017-02-03-graphics-imas/issues/1
 
-### interactive session
-
-* a short overview of graphics in R
-* pointers to the very large range of options
-* a short excursion on graphics tips and tricks (thanks Rowan!)
-* group hug about problems, identify some examples to explore
 
 ### Illustrations
 
-Exactly what we do will depend on the group hug session. 
+Exactly what we do will depend on the group session. 
 
 * get some data sets together and make a few figures, discussing problems and solutions
 * work through software carpentry, and adapt with discussions: http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/
