@@ -12,6 +12,15 @@ install.packages(c("leaflet", "sp", "rgdal", "tidyverse", "maptools", "rworldmap
 
 but if you have problems, don't worry it's not critical. (But feel free to email the organizer/s. )
 
+## Questions
+
+* How to get data on oceanographic features and make nice maps? 
+
+https://github.com/DataScienceHobart/2017-02-03-graphics-imas/issues/3
+
+* How to add ice edge to maps? 
+
+https://github.com/DataScienceHobart/2017-02-03-graphics-imas/issues/1
 
 ### interactive session
 
