@@ -17,7 +17,7 @@ but if you have problems, don't worry it's not critical. (But feel free to email
 
 * a short overview of graphics in R
 * pointers to the very large range of options
-* guidelines for the best places to start. 
+* a short excursion on graphics tips and tricks (thanks Rowan!)
 * group hug about problems, identify some examples to explore
 
 ### Illustrations
