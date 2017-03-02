@@ -6,6 +6,16 @@
 
 ## Getting Help
 
+Local
+
+* Data Science Hobart https://twitter.com/DataScienceHbt, https://datasciencehobart.github.io/  
+* R Ladies Hobart https://twitter.com/hashtag/RLadiesHobart?src=hash
+* Gentle R http://australianantarcticdatacentre.github.io/GentleR/About/
+* HRUG Hobart R Users Group https://www.meetup.com/Hobart-R-Users-Group/
+
+
+Worldwide
+
 * [Twitter #rstats](https://twitter.com/search?q=rstats)
 * [Stackoverflow #r topic](http://stackoverflow.com/questions/tagged/r)
 * [Stackoverflow #ggplot2 topic](http://stackoverflow.com/questions/tagged/ggplot2)
@@ -44,7 +54,11 @@ General resources
 http://pad.software-carpentry.org/DaSH-R
 
 * overview of graphics in R  [The R Graphics Landscape](https://www.stat.ubc.ca/~jenny/STAT545A/block90_baseLatticeGgplot2.html)
-* a short excursion on graphics tips and tricks (thanks Rowan!)
+
+* graphics tips and tricks 
+
+http://rpubs.com/cyclemumner/aad-mapping-tips
+
 * group session about problems, identify some examples to explore
 
 
