@@ -43,8 +43,7 @@ General resources
 
 http://pad.software-carpentry.org/DaSH-R
 
-* a short overview of graphics in R
-* pointers to the very large range of options
+* overview of graphics in R  [The R Graphics Landscape](https://www.stat.ubc.ca/~jenny/STAT545A/block90_baseLatticeGgplot2.html)
 * a short excursion on graphics tips and tricks (thanks Rowan!)
 * group session about problems, identify some examples to explore
 
