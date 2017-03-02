@@ -14,6 +14,8 @@ but if you have problems, don't worry it's not critical. (But feel free to email
 
 ## Questions
 
+These are all open questions!  We can use this to collect resources, all work in progress. 
+
 * How to get data on oceanographic features and make nice maps? 
 
 https://github.com/DataScienceHobart/2017-02-03-graphics-imas/issues/3
