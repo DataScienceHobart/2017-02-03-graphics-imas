@@ -64,6 +64,28 @@ Exactly what we do will depend on the group hug session.
 
 ## Broad topics to touch on
 
+### Reading in data
+
+Shapefiles
+
+```R
+raster::shapefile("myfile.shp")
+```
+Rasters, grids, images. 
+
+```R
+raster::raster("myraster.tif")
+
+raster::brick("myRGB.tif")
+
+raster::brick("myMegaSplat.nc", varname = "Mega")
+
+raster::stack(c("mydata1.nc", "mydata2.nc", "mydata3.nc"))
+```
+
+Packages with data. 
+
+maptools, rworldmap, maps, orsifronts, 
 ### colours
 
 https://github.com/Bart6114/artyfarty
