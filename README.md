@@ -12,6 +12,13 @@ install.packages(c("leaflet", "sp", "rgdal", "tidyverse", "maptools", "rworldmap
 
 but if you have problems, don't worry it's not critical. (But feel free to email the organizer/s. )
 
+### Extra stuff
+
+Here I list packages we should also look at so we know what they have. 
+
+[oce](https://CRAN.R-project.org/package=oce), [marmap](https://CRAN.R-project.org/package=marmap), [oceanmap](https://CRAN.R-project.org/package=oceanmap), [OceanView](https://CRAN.R-project.org/package=OceanView), [orsifronts](https://CRAN.R-project.org/package=orsifronts), [ocedata](https://CRAN.R-project.org/package=ocedata), [RmarineHeatWaves](https://CRAN.R-project.org/package=RmarineHeatWaves), [elevatr](https://CRAN.R-project.org/package=elevatr), [mregions](https://CRAN.R-project.org/package=mregions)
+
+
 ## Questions
 
 These are all open questions!  We can use this to collect resources, all work in progress. 
