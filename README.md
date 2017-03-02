@@ -2,15 +2,7 @@
 
 ## Session on graphics and maps in R
 
-If you want to try R code while we discuss, recommend having `R 3.3.2` installed with packages `leaflet`, `sp`, `rgdal`, `tidyverse`, `maptools`, `rworldmap`, and `mapview` (all up to date). 
-
-To install all these, you should need only to 
-
-```R
-install.packages(c("leaflet", "sp", "rgdal", "tidyverse", "maptools", "rworldmap", "mapview"))
-```
-
-but if you have problems, don't worry it's not critical. (But feel free to email the organizer/s. )
+[R set up](https://github.com/DataScienceHobart/2017-02-03-graphics-imas/blob/master/setup-R.md)
 
 ## The Good Stuff
 
