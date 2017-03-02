@@ -14,6 +14,14 @@ but if you have problems, don't worry it's not critical. (But feel free to email
 
 ### Extra stuff
 
+General resources
+
+[GIS with R](https://pakillo.github.io/GISwithR/#1)
+
+[Introduction to visualising spatial data in R by Robin Lovelace and James Cheshire ](https://cran.r-project.org/doc/contrib/intro-spatial-rl.pdf)
+
+[Create Maps with R Graphics](https://www.nceas.ucsb.edu/scicomp/usecases/CreateMapsWithRGraphics)
+
 Here I list packages we should also look at so we know what they have. 
 
 * [oce](https://CRAN.R-project.org/package=oce)
