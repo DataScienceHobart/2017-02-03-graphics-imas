@@ -17,7 +17,7 @@ Exactly what we do will depend on the group hug session.
 
 * get some data sets together and make a few figures, discussing problems and solutions
 * work through software carpentry, and adapt with discussions: http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/
-
+* work trhough Data Carpentry: http://www.datacarpentry.org/lessons/#geospatial-data-workshop
 
 ## Broad topics to touch on
 
