@@ -3,6 +3,8 @@
 
 [R set up](https://github.com/DataScienceHobart/2017-02-03-graphics-imas/blob/master/setup-R.md)
 
+Wondering what this Git thing is?   https://www.rstudio.com/resources/videos/happy-git-and-gihub-for-the-user-tutorial/
+
 
 ## Getting Help
 
