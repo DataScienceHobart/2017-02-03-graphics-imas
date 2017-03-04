@@ -21,7 +21,8 @@ Load world map, crop it and re-project to polar centric view.
 data(countriesLow)
 raster.map <- raster(xmn=-180, xmx=180, ymn=-90, ymx=-20)
 mp <- crop(countriesLow, extent(raster.map))
-pprj <- "+proj=laea +lat_0=-60 +lon_0=180 +datum=WGS84 +ellps=WGS84 +no_defs +towgs84=0, 0, 0"
+## probably use lat_0=-90 for more general maps, it's a bit off-centre
+pprj <- "+proj=laea +lat_0=-60 +lon_0=180 +datum=WGS84 +ellps=WGS84 +no_defs +towgs84=0,0,0"
 w <- spTransform(mp, CRS(pprj))
 ```
 
@@ -35,8 +36,13 @@ pcl1 <- spTransform(cl1, CRS(pprj))
 
 Load fronts and re-project to polar centric view.
 ```{r}
-front <- frontsmap(map="orsi")
-front <- spTransform(front, CRS(pprj))
+library(orsifronts)
+
+front <- spTransform(orsifronts, CRS(pprj))
+## Choose some colours for the Southern Ocean fronts
+## and store with the data
+front$fcol <- brewer.pal(n=9, name="Greys")[4:8]
+
 ```
 
 Creat graticule lines to add to map.
@@ -62,7 +68,11 @@ pltg <- function() {
 
 Create a dataframe with all the relevant geographic locations you would like to include on your map, including a logical (Y/N) as to whether we want a marker added or not and a left, centre or right adjustment (adj).
 ```{r}
-colony <- data.frame(lon=c(158.945, 160.431, 160.5, -120, -25.673, 81.826, -71.383, -155.847, -90, 175, 169.16, -38.03, 37.866, 9.85, -62.03, 69.16, 51.21, 73.50, -59.52), lat=c(-54.495, -40.858, -50.6, -31, -31, -33, -59.914, -40, -40, -49, -52.51, -54.00, -46.88, -25.21, -48.00, -49.25, -46.322, -53.08, -51.79), name=c("Macquarie Is.", "Tasman\nSea", "Macquarie\nRidge", "Pacific\nOcean", "Atlantic\nOcean", "Indian\nOcean", "Drake Passage", "South-west\n Pacific Basin", "South-east\n Pacific Basin", "Campbell\nPlateau", "Campbell Is.", "Bird Is.\n(South Georgia)", "Marion and\nPrince Edward Is.", "Benguela\nCurrent", "Patagonian\nShelf", "Kerguelen Is.", "Crozet Is.", "Heard and\nMacDonald Is.", "Falkland Is."), marker=c("y", "n", "n", "n", "n", "n", "n", "n", "n", "n", "y", "y", "y", "n", "n", "y", "y", "y", "y"), adj = c(0, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 1))
+## a tip from twitter
+#https://twitter.com/dmi3k/status/837421359936438273
+
+colony <- data.frame(lon=c(158.945, 160.431, 160.5, -120, -25.673, 81.826, -71.383, -155.847, -90, 175, 169.16, -38.03, 37.866, 9.85, -62.03, 69.16, 51.21, 73.50, -59.52), lat=c(-54.495, -40.858, -50.6, -31, -31, -33, -59.914, -40, -40, -49, -52.51, -54.00, -46.88, -25.21, -48.00, -49.25, -46.322, -53.08, -51.79), name=c("Macquarie Is.", "Tasman\nSea", "Macquarie\nRidge", "Pacific\nOcean", "Atlantic\nOcean", "Indian\nOcean", "Drake Passage", "South-west\n Pacific Basin", "South-east\n Pacific Basin", "Campbell\nPlateau", "Campbell Is.", "Bird Is.\n(South Georgia)", "Marion and\nPrince Edward Is.", "Benguela\nCurrent", "Patagonian\nShelf", "Kerguelen Is.", "Crozet Is.", "Heard and\nMacDonald Is.", "Falkland Is."), marker=c("y", "n", "n", "n", "n", "n", "n", "n", "n", "n", "y", "y", "y", "n", "n", "y", "y", "y", "y"), adj = c(0, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 1), 
+                     stringsAsFactors = FALSE)
 ```
 
 Now here is the ugly bit. To offset the labels from the markers, we adjust the lat/lons of the subsetted labels. Then re-project them to have a polar-centric projection.
@@ -81,6 +91,8 @@ lab_pos$lon[lab_pos$name %in% c("Bird Is.\n(South Georgia)")] <- lab_pos$lon[lab
 lab_pos$lat[lab_pos$name %in% c("Bird Is.\n(South Georgia)")] <- lab_pos$lat[lab_pos$name %in% c("Bird Is.\n(South Georgia)")]  + 1.0
 lab_pos$lon[lab_pos$name %in% c("Falkland Is.")] <- lab_pos$lon[lab_pos$name %in% c("Falkland Is.")]  + 1.0
 lab_pos$lat[lab_pos$name %in% c("Falkland Is.")] <- lab_pos$lat[lab_pos$name %in% c("Falkland Is.")]  - 0.5
+
+
 ```
 
 Make labels and markers SpatialPoints. Then re-project them to have a polar-centric projection.
@@ -94,8 +106,8 @@ lab_pos <- spTransform(lab_pos, CRS(pprj))
 ```
 
 We're going to save this plot out as a high res tiff file.
-```{r, include=TRUE, eval=TRUE}
-tiff(file=paste0("~/MI_Albatross/plots/SuppFigure2_geographic_locations.tiff"), width=7.5, height=7.5, units="in", res=300)
+```{r, include=TRUE, eval=FALSE}
+tiff(file= "mymapcalledwhatever.tiff"", width=7.5, height=7.5, units="in", res=300)
 ```
 
 Ok now for the plot
@@ -108,14 +120,8 @@ plot(w, col="white", border=FALSE)
 plot(pcl1, add=TRUE, col=grey(0.7, alpha=0.3))
 #Add graticule lines
 plot(g3, add=TRUE, lty=3)
-#Choose some colours for the Southern Ocean fronts
-fcol <- brewer.pal(n=9, name="Greys")[4:8]
-#Plot fronts
-plot(front[1, 1], add=TRUE, lty=1, lwd=1, col=fcol[1]) #STF
-plot(front[2, 1], add=TRUE, lty=1, lwd=1, col=fcol[2]) #SAF
-plot(front[3, 1], add=TRUE, lty=1, lwd=1, col=fcol[3]) #PF
-plot(front[4, 1], add=TRUE, lty=1, lwd=1, col=fcol[4]) #Southern Antarctic circumpolar current front
-plot(front[5, 1], add=TRUE, lty=1, lwd=1, col=fcol[5]) #Southern boundary of ACC
+## use the colours we specified earlier
+plot(front, add = TRUE, lty = 1, lwd = 1, col = front$fcol)
 #Choose some colours for the labels we will add to the plot
 col <- brewer.pal(3, "Dark2")
 #Add world map
@@ -149,7 +155,7 @@ plot(1, type="n", axes=F, xlab="", ylab="")
 #Add headed
 mtext('Fronts', side=1, cex=1, line=-5.3, col="grey40", at = 0.64)
 #Add legend, referencing the coordinates of the empty plot
-legend(x = 0.57, y = 0.67, c("Subtropical Front", "Subantarctic Front", "Polar Front", "Southern ACC Front", "Southern Boundary of ACC"), lty=c(1, 1, 1, 1, 1), col=fcol[1:5], bty="n", cex=0.7, inset=0.5)
+legend(x = 0.57, y = 0.67, c("Subtropical Front", "Subantarctic Front", "Polar Front", "Southern ACC Front", "Southern Boundary of ACC"), lty=c(1, 1, 1, 1, 1), col=front$fcol, bty="n", cex=0.7, inset=0.5)
 ```
 
 Close plotting window to save.
