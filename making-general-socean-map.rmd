@@ -111,7 +111,7 @@ lab_pos <- spTransform(lab_pos, CRS(pprj))
 
 We're going to save this plot out as a high res tiff file.
 ```{r, include=TRUE, eval=FALSE}
-tiff(file= "mymapcalledwhatever.tiff"", width=7.5, height=7.5, units="in", res=300)
+tiff(file= "mymapcalledwhatever.tiff", width=7.5, height=7.5, units="in", res=300)
 ```
 
 Ok now for the plot
