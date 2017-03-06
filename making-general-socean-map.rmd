@@ -128,10 +128,10 @@ plot(g3, add=TRUE, lty=3)
 plot(front, add = TRUE, lty = 1, lwd = 1, col = front$fcol)
 #Choose some colours for the labels we will add to the plot
 col <- brewer.pal(3, "Dark2")
-#Add world map
-plot(w, col="darkgrey", border=FALSE, add=TRUE)
 #Add polygon
 plot(gPolygonize(pg), col = "#1B9E774D", add=T, border=FALSE)
+#Add world map
+plot(w, col="darkgrey", border=FALSE, add=TRUE)
 #Add markers
 plot(geog[geog$marker=="y", ], col=col[3], border=FALSE, add=TRUE, pch=19, cex=0.5)
 #Add labels for all those we want left justified
