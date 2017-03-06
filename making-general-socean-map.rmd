@@ -45,7 +45,7 @@ front$fcol <- brewer.pal(n=9, name="Greys")[4:8]
 
 ```
 
-Creat graticule lines to add to map.
+Create graticule lines to add to map.
 ```{r}
 xx <- c(0, 90, 180, 270, 360); yy <- c(-80, -60, -40, -20)
 g3 <- graticule(xx, yy, proj=projection(pprj))
@@ -53,6 +53,12 @@ g4 <- graticule(xx, -20, proj=projection(pprj))
 g3labs1 <- graticule_labels(lons=180, xline=180, yline=-20, proj=projection(pprj))
 g3labs2 <- graticule_labels(lons=0, xline=180, yline=-20, proj=projection(pprj))
 g4labs <- graticule_labels(lats=c(-40, -60, -20), yline = -20, xline=0, proj=projection(pprj))
+```
+
+Let's add a polygon, in this example it represents the foraging distribution of Macquarie Island light-mantled albatross.
+```{r}
+g <- graticule(c(135, 200), c(-70, -40), proj = "+proj=laea +lat_0=-90 +datum=WGS84")
+pg <- spTransform(g, CRS(pprj))
 ```
 
 Function to add latitude and longitudinal labels.
@@ -91,8 +97,6 @@ lab_pos$lon[lab_pos$name %in% c("Bird Is.\n(South Georgia)")] <- lab_pos$lon[lab
 lab_pos$lat[lab_pos$name %in% c("Bird Is.\n(South Georgia)")] <- lab_pos$lat[lab_pos$name %in% c("Bird Is.\n(South Georgia)")]  + 1.0
 lab_pos$lon[lab_pos$name %in% c("Falkland Is.")] <- lab_pos$lon[lab_pos$name %in% c("Falkland Is.")]  + 1.0
 lab_pos$lat[lab_pos$name %in% c("Falkland Is.")] <- lab_pos$lat[lab_pos$name %in% c("Falkland Is.")]  - 0.5
-
-
 ```
 
 Make labels and markers SpatialPoints. Then re-project them to have a polar-centric projection.
@@ -126,6 +130,8 @@ plot(front, add = TRUE, lty = 1, lwd = 1, col = front$fcol)
 col <- brewer.pal(3, "Dark2")
 #Add world map
 plot(w, col="darkgrey", border=FALSE, add=TRUE)
+#Add polygon
+plot(gPolygonize(pg), col = "#1B9E774D", add=T, border=FALSE)
 #Add markers
 plot(geog[geog$marker=="y", ], col=col[3], border=FALSE, add=TRUE, pch=19, cex=0.5)
 #Add labels for all those we want left justified
