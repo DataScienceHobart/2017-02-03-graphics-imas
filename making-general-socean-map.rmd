@@ -7,11 +7,13 @@ output: html_document
 
 Load libraries.
 ```{r setup, message=FALSE}
-rm(list=ls())
 library(graticule)
+library(orsifronts)
 library(raadtools)
 library(raster)
 library(RColorBrewer)
+library(rgdal)
+library(rgeos)
 library(rworldmap)
 library(sp)
 ```
@@ -36,13 +38,10 @@ pcl1 <- spTransform(cl1, CRS(pprj))
 
 Load fronts and re-project to polar centric view.
 ```{r}
-library(orsifronts)
-
 front <- spTransform(orsifronts, CRS(pprj))
 ## Choose some colours for the Southern Ocean fronts
 ## and store with the data
 front$fcol <- brewer.pal(n=9, name="Greys")[4:8]
-
 ```
 
 Create graticule lines to add to map.
@@ -59,6 +58,14 @@ Let's add a polygon, in this example it represents the foraging distribution of 
 ```{r}
 g <- graticule(c(135, 200), c(-70, -40), proj = "+proj=laea +lat_0=-90 +datum=WGS84")
 pg <- spTransform(g, CRS(pprj))
+```
+
+Let's add a shapefile. How about the CCAMLR managment boundary? You can get it from here: https://gis.ccamlr.org/home
+```{r}
+#Read in shapefile. NOTE: Automatically read in as SpatialPolygonsDataFrame
+ccamlr <- readOGR("~/CCAMLR/gis_subareas/", "subareas")
+#Re-project
+ccamlr <- spTransform(ccamlr, CRS(pprj))
 ```
 
 Function to add latitude and longitudinal labels.
@@ -128,7 +135,9 @@ plot(g3, add=TRUE, lty=3)
 plot(front, add = TRUE, lty = 1, lwd = 1, col = front$fcol)
 #Choose some colours for the labels we will add to the plot
 col <- brewer.pal(3, "Dark2")
-#Add polygon
+#Add CCAMLR polygon from shapefile
+plot(ccamlr, add=T, border=F, col="#1E90FF26")
+#Add polygon of albatross distrbution
 plot(gPolygonize(pg), col = "#1B9E774D", add=T, border=FALSE)
 #Add world map
 plot(w, col="darkgrey", border=FALSE, add=TRUE)
