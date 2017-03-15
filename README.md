@@ -44,6 +44,8 @@ General resources
 
 [Create Maps with R Graphics](https://www.nceas.ucsb.edu/scicomp/usecases/CreateMapsWithRGraphics)
 
+[Intro to Spatial Analysis in R](http://jafflerbach.github.io/spatial-analysis-R/intro_spatial_data_R.html)
+
 ## Books
 
 * GGPLOT2 http://ggplot2.org/book/
