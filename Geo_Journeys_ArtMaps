@@ -149,7 +149,8 @@ Save out map as pdf.
 ```
   
 Plot the map. As you can see I haven't been able to get the correct aspect ratio and the maps on the centre of the A4 page.
-Ideally, we'd North up (well roughly) for all tracks as well...
+Annoyingly, the countries polygons are plotting outside the extent on the odd occasion.
+Ideally, we'd North up (well roughly) for all tracks as well.
 ```{r}
   plot(w, col="white", border=FALSE)
   # plot(pcl1, add=TRUE, col=grey(0.7, alpha=0.5))
