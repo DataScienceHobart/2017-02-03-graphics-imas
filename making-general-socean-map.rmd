@@ -148,11 +148,11 @@ text(lab_pos[lab_pos$adj==0, ], labels=lab_pos$name[lab_pos$adj==0], cex= 0.75, 
 #Add labels for all those we want right justified
 text(lab_pos[lab_pos$adj==1, ], labels=lab_pos$name[lab_pos$adj==1], cex= 0.75, adj=1, col=col[3])
 #Add a label that we want in a different colour and right justified
-text(geog[geog$name %in% c("Macquarie\nRidge"), ], labels=geog$name[geog$name %in% c("Macquarie\nRidge")], cex= 0.75, adj=1, col=col[2])
+text(geog[geog$name %in% c("Macquarie\nRidge"), ], labels=geog$name[geog$name %in% c("Macquarie\nRidge")], cex= 0.75, adj=1, col=col[2], font=3)
 #Add in the rest of the feature we want in black text
-text(geog[geog$name %in% c("Tasman\nSea", "Drake Passage", "South-west\n Pacific Basin", "South-east\n Pacific Basin", "Campbell\nPlateau", "Benguela\nCurrent", "Patagonian\nShelf"), ], labels=geog$name[geog$name %in% c("Tasman\nSea", "Drake Passage", "South-west\n Pacific Basin", "South-east\n Pacific Basin", "Campbell\nPlateau", "Benguela\nCurrent", "Patagonian\nShelf")], cex= 0.75, adj=0.5, col="black")
+text(geog[geog$name %in% c("Tasman\nSea", "Drake Passage", "South-west\n Pacific Basin", "South-east\n Pacific Basin", "Campbell\nPlateau", "Benguela\nCurrent", "Patagonian\nShelf"), ], labels=geog$name[geog$name %in% c("Tasman\nSea", "Drake Passage", "South-west\n Pacific Basin", "South-east\n Pacific Basin", "Campbell\nPlateau", "Benguela\nCurrent", "Patagonian\nShelf")], cex= 0.75, adj=0.5, col="black", font=3)
 #Add the ocean names in green
-text(geog[geog$name %in% c("Pacific\nOcean", "Atlantic\nOcean", "Indian\nOcean"), ], labels=geog$name[geog$name %in% c("Pacific\nOcean", "Atlantic\nOcean", "Indian\nOcean")], cex= 0.75, adj=0.5, col=col[1])
+text(geog[geog$name %in% c("Pacific\nOcean", "Atlantic\nOcean", "Indian\nOcean"), ], labels=geog$name[geog$name %in% c("Pacific\nOcean", "Atlantic\nOcean", "Indian\nOcean")], cex= 0.75, adj=0.5, col=col[1], font=3)
 #Add in a line to signify Macquarie Ridge
 arrows(x0=-1341759, x1=-1016381, y0=500292.8, y1=1408583, length=0, angle=0, code=1, col=col[2], lty=1, lwd=0.8)
 #Add a graticule border
